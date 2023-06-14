@@ -2,7 +2,7 @@ using System;
 
 namespace LibraryManagementSystem;
 
-class Novel : Book, IBorrowable
+public class Novel : Book, IBorrowable
 {
     public string Genre { get; set; }
 

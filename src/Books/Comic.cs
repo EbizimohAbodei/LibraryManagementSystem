@@ -2,7 +2,7 @@ using System;
 
 namespace LibraryManagementSystem;
 
-class Comic : Book, IBorrowable
+public class Comic : Book, IBorrowable
 {
     public string Artist { get; set; }
 

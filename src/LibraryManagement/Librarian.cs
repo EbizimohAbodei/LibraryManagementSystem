@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LibraryManagementSystem;
 
-class Librarian : Person
+public class Librarian : Person
 {
     public Librarian(string name, int ID) : base(name, ID)
     {

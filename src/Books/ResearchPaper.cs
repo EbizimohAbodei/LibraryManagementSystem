@@ -2,7 +2,7 @@ using System;
 
 namespace LibraryManagementSystem;
 
-class ResearchPaper : Book
+public class ResearchPaper : Book
 {
     public ResearchPaper(string title, string author, string isbn, int publicationYear)
         : base(title, author, isbn, publicationYear)

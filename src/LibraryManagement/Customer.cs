@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace LibraryManagementSystem;
 
-class Customer : Person
+public class Customer : Person
 {
     private List<string> BorrowedBooks { get; }
 

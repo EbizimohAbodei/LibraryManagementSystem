@@ -2,7 +2,7 @@ using System;
 
 namespace LibraryManagementSystem;
 
-class Book
+public class Book
 {
     private string _isbn;
     public string Title { get; set; }

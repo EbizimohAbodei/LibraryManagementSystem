@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
-
 namespace LibraryManagementSystem;
 
-interface IBorrowable
+public interface IBorrowable
 {
-    void Borrow();
-    void Return();
-    
+    public void Borrow();
+    public void Return(); 
 }

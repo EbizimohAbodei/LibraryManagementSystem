@@ -2,7 +2,7 @@ using System;
 
 namespace LibraryManagementSystem;
 
-class TextBook : Book, IBorrowable
+public class TextBook : Book, IBorrowable
 {
     public TextBook(string title, string author, string isbn, int publicationYear)
         : base(title, author, isbn, publicationYear)
