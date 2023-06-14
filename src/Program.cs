@@ -1,2 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using System;
+namespace LibraryManagementSystem;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Library library = new Library();
+
+        Book book1 = new Comic("The Amazing Spider-Man", "Stan Lee", "978-1302920096", 1963, "Steve Ditko");
+        Book book2 = new Novel("To Kill a Mockingbird", "Harper Lee", "978-0061120084", 1960, "Classic");
+        Book book3 = new TextBook("Introduction to Computer Science", "John Smith", "978-0123456789", 2021);
+        Book book4 = new ResearchPaper("Research Paper on Artificial Intelligence", "Jane Doe", "978-0987654321", 2022);
+
+        library.AddBook(book1);
+        library.AddBook(book2);
+        library.AddBook(book3);
+        library.AddBook(book4);
+
+        Console.WriteLine("Library Contents:");
+        library.PrintBooks();
+
+        library.RemoveBook(book2);
+
+        Console.WriteLine("Updated Library Contents:");
+        library.PrintBooks();
+    }
+}

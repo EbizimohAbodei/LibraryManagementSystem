@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace LibraryManagement;
+namespace LibraryManagementSystem;
 
 class BorrowableBook : Book, IBorrowable
 {

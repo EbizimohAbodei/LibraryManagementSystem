@@ -1,6 +1,6 @@
 using System;
 
-namespace LibraryManagement;
+namespace LibraryManagementSystem;
 
 class Comic : Book, IBorrowable
 {

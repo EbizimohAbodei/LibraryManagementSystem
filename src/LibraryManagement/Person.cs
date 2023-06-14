@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
 
-namespace LibraryManagement;
+namespace LibraryManagementSystem;
 
 public abstract class Person
 {

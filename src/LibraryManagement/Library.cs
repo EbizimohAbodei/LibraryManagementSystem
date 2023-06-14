@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace LibraryManagement;
+namespace LibraryManagementSystem;
 
 public class Library
 {
@@ -35,6 +35,15 @@ public class Library
     public void ReturnBook(Book book, Person person)
     {
         Console.WriteLine($"{person.Name} returned the book: {book.Title}");
+    }
+
+    public void PrintBooks()
+    {
+        foreach (var book in books)
+        {
+            book.PrintInfo();
+            Console.WriteLine();
+        }
     }
 
     public void AddPerson(Person person)
