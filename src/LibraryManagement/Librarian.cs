@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LibraryManagementSystem;
+namespace LibrarySystem;
 
 public class Librarian : Person
 {
@@ -9,17 +9,17 @@ public class Librarian : Person
     {
     }
 
-    public void AddBook(string book)
+    public void AddBook(Book book)
     {
         Console.WriteLine($"{Name} has added the book: {book}");
     }
 
-    public void RemoveBook(string book)
+    public void RemoveBook(Book book)
     {
         Console.WriteLine($"{Name} has removed the book: {book}");
     }
 
-    public void EditBook(string book)
+    public void EditBook(Book book)
     {
         Console.WriteLine($"{Name} has edited the book: {book}");
     }
@@ -29,3 +29,4 @@ public class Librarian : Person
         Console.WriteLine($"{Name} is managing books.");
     }
 }
+

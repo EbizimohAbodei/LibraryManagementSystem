@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace LibraryManagementSystem;
+using LibrarySystem;
 
 class Program
 {
@@ -13,6 +13,9 @@ class Program
         Book book3 = new TextBook("Introduction to Computer Science", "John Smith", "978-0123456789", 2021);
         Book book4 = new ResearchPaper("Research Paper on Artificial Intelligence", "Jane Doe", "978-0987654321", 2022);
 
+        Person customer1 = new Customer("John Doe", 1);
+        Person librarian1 = new Librarian("Emily Johnson", 2);
+
         library.AddBook(book1);
         library.AddBook(book2);
         library.AddBook(book3);
@@ -22,6 +25,20 @@ class Program
         library.PrintBooks();
 
         library.RemoveBook(book2);
+
+        Console.WriteLine("Updated Library Contents:");
+        library.PrintBooks();
+
+        library.AddPerson(customer1);
+        library.AddPerson(librarian1);
+
+        library.PrintBooks();
+
+        Customer customer = (Customer)customer1;
+        customer.BorrowBook(book2);
+
+        // Librarian librarian = (Librarian)librarian1;
+        // librarian.RemoveBook(book1);
 
         Console.WriteLine("Updated Library Contents:");
         library.PrintBooks();

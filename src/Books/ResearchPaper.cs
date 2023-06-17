@@ -1,6 +1,5 @@
 using System;
-
-namespace LibraryManagementSystem;
+namespace LibrarySystem;
 
 public class ResearchPaper : Book
 {
@@ -18,3 +17,4 @@ public class ResearchPaper : Book
         Console.WriteLine($"Printing pages {startPage} to {startPage + pagesToPrint - 1} of research paper '{Title}'.");
     }
 }
+

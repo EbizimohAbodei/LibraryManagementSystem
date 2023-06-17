@@ -1,6 +1,6 @@
 using System;
+namespace LibrarySystem;
 
-namespace LibraryManagementSystem;
 
 public class Novel : Book, IBorrowable
 {

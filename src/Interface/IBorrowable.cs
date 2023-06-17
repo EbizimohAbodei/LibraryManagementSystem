@@ -1,5 +1,5 @@
 using System;
-namespace LibraryManagementSystem;
+namespace LibrarySystem;
 
 public interface IBorrowable
 {

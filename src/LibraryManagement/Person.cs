@@ -1,6 +1,6 @@
 using System;
 
-namespace LibraryManagementSystem;
+namespace LibrarySystem;
 
 public abstract class Person
 {
@@ -20,3 +20,4 @@ public abstract class Person
 
     public abstract void DoSomething();
 }
+

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace LibraryManagementSystem;
+namespace LibrarySystem;
 
 public class Library
 {
@@ -61,6 +61,6 @@ public class Library
     public void EditPerson(Person person)
     {
         Console.WriteLine($"Person edited: {person.Name}");
-    }
-    
+    } 
 }
+

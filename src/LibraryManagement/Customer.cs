@@ -2,24 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace LibraryManagementSystem;
+namespace LibrarySystem;
 
 public class Customer : Person
 {
-    private List<string> BorrowedBooks { get; }
+    private List<Book> BorrowedBooks { get; }
 
     public Customer(string name, int ID) : base(name, ID)
     {
-        BorrowedBooks = new List<string>();
+        BorrowedBooks = new List<Book>();
     }
 
-    public void BorrowBook(string book)
+    public void BorrowBook(Book book)
     {
         BorrowedBooks.Add(book);
         Console.WriteLine($"{Name} has borrowed the book: {book}");
     }
 
-    public void ReturnBook(string book)
+    public void ReturnBook(Book book)
     {
         if (BorrowedBooks.Contains(book))
         {
