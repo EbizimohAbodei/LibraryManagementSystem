@@ -21,10 +21,15 @@ public class TextBook : Book, IBorrowable
 
     public void PrintPages(int startPage, int endPage)
     {
-        int pageLimit = 10;
-        int pageCount = endPage - startPage + 1;
-        int pagesToPrint = Math.Min(pageCount, pageLimit);
-
-        Console.WriteLine($"Printing pages {startPage} to {startPage + pagesToPrint - 1} of textbook '{Title}'.");
+        int pageDifference = endPage - startPage;
+        if (pageDifference < 10)
+        {
+            Console.WriteLine($"Printing from pages {startPage} to {endPage} of the textbook: {Title}");
+            // Additional logic for printing the specified pages
+        }
+        else
+        {
+            Console.WriteLine("Error: Cannot print more than 10 pages.");
+        }
     }
 }

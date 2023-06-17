@@ -37,10 +37,19 @@ class Program
         Customer customer = (Customer)customer1;
         customer.BorrowBook(book2);
 
-        // Librarian librarian = (Librarian)librarian1;
-        // librarian.RemoveBook(book1);
+        Librarian librarian = (Librarian)librarian1;
+        librarian.RemoveBook(book1);
 
         Console.WriteLine("Updated Library Contents:");
         library.PrintBooks();
+
+        // Create a TextBook instance
+        TextBook textbook = new TextBook("Introduction to Computer Science", "John Smith", "978-0123456789", 2021);
+
+        // Print pages from 10 to 20
+        textbook.PrintPages(11, 20);
+        // Should return an error - page limit is 10
+        textbook.PrintPages(5, 20);
+
     }
 }
