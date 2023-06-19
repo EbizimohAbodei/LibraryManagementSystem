@@ -6,24 +6,24 @@ namespace LibrarySystem;
 
 public class Customer : Person
 {
-    private List<Book> BorrowedBooks { get; }
+    private List<Book> _BorrowedBooks { get; }
 
     public Customer(string name, int ID) : base(name, ID)
     {
-        BorrowedBooks = new List<Book>();
+        _BorrowedBooks = new List<Book>();
     }
 
     public void BorrowBook(Book book)
     {
-        BorrowedBooks.Add(book);
+        _BorrowedBooks.Add(book);
         Console.WriteLine($"{Name} has borrowed the book: {book}");
     }
 
     public void ReturnBook(Book book)
     {
-        if (BorrowedBooks.Contains(book))
+        if (_BorrowedBooks.Contains(book))
         {
-            BorrowedBooks.Remove(book);
+            _BorrowedBooks.Remove(book);
             Console.WriteLine($"{Name} has returned the book: {book}");
         }
         else

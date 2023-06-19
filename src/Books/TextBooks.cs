@@ -4,8 +4,8 @@ namespace LibrarySystem;
 
 public class TextBook : Book, IBorrowable
 {
-    public TextBook(string title, string author, string isbn, int publicationYear)
-        : base(title, author, isbn, publicationYear)
+    public TextBook(string title, string author, string isbn, int publicationYear, int pages)
+        : base(title, author, isbn, publicationYear, pages)
     {
     }
 
@@ -22,7 +22,8 @@ public class TextBook : Book, IBorrowable
     public void PrintPages(int startPage, int endPage)
     {
         int pageDifference = endPage - startPage;
-        if (pageDifference < 10)
+        int maxPage = 10;
+        if (pageDifference < maxPage && endPage > pages)
         {
             Console.WriteLine($"Printing from pages {startPage} to {endPage} of the textbook: {Title}");
             // Additional logic for printing the specified pages

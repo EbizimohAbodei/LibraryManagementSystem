@@ -5,8 +5,8 @@ public class Comic : Book, IBorrowable
 {
     public string Artist { get; set; }
 
-    public Comic(string title, string author, string isbn, int publicationYear, string artist)
-        : base(title, author, isbn, publicationYear)
+    public Comic(string title, string author, string isbn, int publicationYear, int pages, string artist)
+        : base(title, author, isbn, publicationYear, pages)
     {
         Artist = artist;
     }

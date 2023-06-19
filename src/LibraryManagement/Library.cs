@@ -6,25 +6,49 @@ namespace LibrarySystem;
 
 public class Library
 {
-    private List<Book> books;
-    private List<Person> people;
+    private List<Book> _books;
+    private List<Person> _persons;
+
+    public List<Book> Books
+    {
+        get { return _books; }
+    }
+
+    public List<Person> Persons
+    {
+        get { return _persons; }
+    }
 
     public Library()
     {
-        books = new List<Book>();
-        people = new List<Person>();
+        _books = new List<Book>();
+        _persons = new List<Person>();
     }
 
     public void AddBook(Book book)
-    {
-        books.Add(book);
-        Console.WriteLine($"Book added: {book.Title}");
+    {   
+        if (IsUniqueISBN(book.ISBN))
+        {
+        _books.Add(book);
+        Console.WriteLine($"Book added successfully: {book.Title}");
+        }
+        else
+        {
+            Console.WriteLine("A book with the same ISBN already exists in the library.");
+        }
     }
 
     public void RemoveBook(Book book)
     {
-        books.Remove(book);
-        Console.WriteLine($"Book removed: {book.Title}");
+        if (_books.Contains(book))
+        {
+            _books.Remove(book);
+            Console.WriteLine($"Book removed: {book.Title}");
+        }
+        else
+        {
+            Console.WriteLine("Book not found in the library.");
+        }
     }
 
     public void BorrowBook(Book book, Person person)
@@ -39,23 +63,43 @@ public class Library
 
     public void PrintBooks()
     {
-        foreach (var book in books)
+        foreach (var book in _books)
         {
             book.PrintInfo();
             Console.WriteLine();
         }
     }
 
-    public void AddPerson(Person person)
+    private bool IsUniqueISBN(string isbn)
     {
-        people.Add(person);
+        foreach (Book book in _books)
+        {
+            if (book.ISBN == isbn)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void AddPerson(Person person)
+    {   
+        _persons.Add(person);
         Console.WriteLine($"Person added: {person.Name}");
     }
 
     public void RemovePerson(Person person)
-    {
-        people.Remove(person);
-        Console.WriteLine($"Person removed: {person.Name}");
+    {   
+        if (_persons.Contains(person))
+        {
+            _persons.Remove(person);
+            Console.WriteLine($"Person removed: {person.Name}");
+        }
+        else
+        {
+            Console.WriteLine("Person not found in the library.");
+        }
+
     }
 
     public void EditPerson(Person person)
